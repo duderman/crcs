@@ -66,7 +66,7 @@ CRC32_Update(CRC32_CTX *pms, const uint8_t *data, size_t nbytes)
 }
 
 int
-CRC32_Finish(uint8_t *digest, CRC32_CTX *pms)
+CRC32_Finish(CRC32_CTX *pms, uint8_t *digest)
 {
   register uint32_t crc = pms->state[0] ^ 0xFFFFFFFF;
   register int i;

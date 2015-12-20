@@ -16,10 +16,10 @@ typedef struct crc32_state_s {
 
 int	CRC32_Init _((CRC32_CTX *pms));
 void CRC32_Update _((CRC32_CTX *pms, const uint8_t *data, size_t nbytes));
-int	CRC32_Finish _((uint8_t *digest, CRC32_CTX *pms));
+int	CRC32_Finish _((CRC32_CTX *pms, uint8_t *digest));
 
-#define CRC32_BLOCK_LENGTH		1
-#define CRC32_DIGEST_LENGTH		4
+#define CRC32_BLOCK_LENGTH 64
+#define CRC32_DIGEST_LENGTH 4
 #define CRC32_DIGEST_STRING_LENGTH	(CRC32_DIGEST_LENGTH * 2 + 1)
 
 #endif /* CRC32_INCLUDED */

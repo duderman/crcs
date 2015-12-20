@@ -16,7 +16,7 @@ describe Digest::CRC32 do
         File.expand_path('../../fixtures/test_file.txt', __FILE__)
       end
       let(:digest_object) { described_class.file(file) }
-      let(:expected_digest) { 'f68830b0' }
+      let(:expected_digest) { 'b739e0d5' }
 
       it 'calculates digest correctly' do
         expect(digest_object.hexdigest).to eq(expected_digest)
