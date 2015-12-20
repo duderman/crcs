@@ -1,5 +1,3 @@
-require "crcs/version"
+require 'digest/crc32.so'
 
-module Crcs
-  # Your code goes here...
-end
+require 'digest/crc32/version'

@@ -1,6 +1,12 @@
-require "bundler/gem_tasks"
-require "rspec/core/rake_task"
+require 'bundler/gem_tasks'
 
-RSpec::Core::RakeTask.new(:spec)
+require 'rake/extensiontask'
+Rake::ExtensionTask.new('crc32') do |ext|
+  ext.ext_dir = 'ext/digest/crc32'
+  ext.lib_dir = 'lib/digest'
+end
 
-task :default => :spec
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(spec: :compile)
+
+task default: :spec
